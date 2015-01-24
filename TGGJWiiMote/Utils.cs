@@ -17,5 +17,14 @@ namespace TGGJWiiMote
                 Console.WriteLine("Incorrect input, try again");
             }
         }
+
+        public static int ForceReadInt() {
+            while (true) {
+                var response = Console.ReadLine();
+                int result;
+                if (int.TryParse(response,out result)) return result;
+                Console.WriteLine("Type a number!");
+            }
+        }
     }
 }
